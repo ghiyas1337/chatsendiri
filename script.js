@@ -10,13 +10,14 @@ document.getElementById('askButton').addEventListener('click', async () => {
     responseDiv.innerText = "Memproses...";
 
     try {
-        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyApgiQZd-Y6wB9ZTQKDRszp_vevEC6-O2E', {
+        const response = await fetch('https://api.groq.io/v1/generate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `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`
             },
             body: JSON.stringify({
-                prompt: query,
+                query: query,
                 // Tambahkan parameter lain sesuai dengan dokumentasi API
             }),
         });
@@ -27,7 +28,7 @@ document.getElementById('askButton').addEventListener('click', async () => {
 
         const data = await response.json();
         console.log(data); // Tambahkan ini untuk melihat respons di konsol
-        responseDiv.innerText = data.generatedContent || "Tidak ada jawaban dari AI.";
+        responseDiv.innerText = data.result || "Tidak ada jawaban dari AI.";
     } catch (error) {
         console.error("Error details:", error); // Tambahkan ini untuk melihat detail kesalahan di konsol
         responseDiv.innerText = "Terjadi kesalahan: " + error.message;
