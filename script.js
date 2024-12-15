@@ -10,7 +10,7 @@ document.getElementById('askButton').addEventListener('click', async () => {
   responseDiv.innerText = "Memproses...";
 
   try {
-    const response = await fetch('https://api.groq.io/v1/generate', {
+    const response = await fetch('groq.chat.completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
