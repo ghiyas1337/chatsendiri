@@ -17,13 +17,19 @@ document.getElementById('askButton').addEventListener('click', async () => {
             },
             body: JSON.stringify({
                 prompt: query,
-                // Anda dapat menambahkan parameter lain sesuai dengan dokumentasi API
+                // Tambahkan parameter lain sesuai dengan dokumentasi API
             }),
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
+        console.log(data); // Tambahkan ini untuk melihat respons di konsol
         responseDiv.innerText = data.generatedContent || "Tidak ada jawaban dari AI.";
     } catch (error) {
+        console.error("Error details:", error); // Tambahkan ini untuk melihat detail kesalahan di konsol
         responseDiv.innerText = "Terjadi kesalahan: " + error.message;
     }
 });
