@@ -33,5 +33,24 @@ document.getElementById('askButton').addEventListener('click', async () => {
   } catch (error) {
     console.error("Error details:", error); // Tambahkan ini untuk melihat detail kesalahan di konsol
     responseDiv.innerText = "Terjadi kesalahan: " + error.message;
+
+    // Log the error to the console
+    console.error("Error:", error);
+
+    // Log the request and response to the console
+    console.log("Request:", {
+      method: 'POST',
+      url: 'https://api.groq.com/openai/v1/chat/completions',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `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`
+      },
+      body: JSON.stringify({
+        query: query,
+        // Tambahkan parameter lain sesuai dengan dokumentasi API
+      }),
+    });
+
+    console.log("Response:", response);
   }
 });
