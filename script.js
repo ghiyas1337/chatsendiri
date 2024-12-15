@@ -23,7 +23,8 @@ document.getElementById('askButton').addEventListener('click', async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorData = await response.json(); // Ambil data kesalahan dari respons
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message || 'Unknown error'}`);
         }
 
         const data = await response.json();
